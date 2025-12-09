@@ -1,4 +1,7 @@
 $(document).ready(function() {
+
+    // --- Global Favicon ---
+    $('head').append('<link rel="icon" type="image/png" href="assets/images/logo_light.png">');
     
     // --- Component Loading ---
     // Load Header
@@ -60,4 +63,5 @@ $(document).ready(function() {
             }));
         });
     }
+
 });
