@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title> CLA | Analytics Dashboard </title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-display">
+
+    <div id="global-header"></div>
+
+    <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 min-h-screen">
+        
+        <div class="flex flex-col gap-2 mb-8">
+            <h1 class="h1-page-title">Data Visualization Dashboard</h1>
+            <p class="text-text-muted-light dark:text-text-muted-dark academic-paragraph !mt-0">
+                Upload your research dataset (CSV) to generate real-time correlation analysis, regression trends, and performance insights.
+            </p>
+        </div>
+
+        <div id="upload-section" class="content-card border-dashed border-2 border-primary/30 dark:border-accent/30 bg-primary/5 dark:bg-accent/5 cursor-pointer hover:bg-primary/10 transition-colors text-center py-12">
+            <input type="file" id="csvFileInput" accept=".csv" class="hidden">
+            <div class="flex flex-col items-center gap-4">
+                <span class="material-symbols-outlined text-6xl text-primary dark:text-accent">cloud_upload</span>
+                <div class="flex flex-col">
+                    <h3 class="text-xl font-bold text-primary dark:text-accent">Upload Dataset (.csv)</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                        Required Columns: StudentID, LabHours, HandsOn%, PrelimGrade, MidtermGrade
+                    </p>
+                </div>
+                <button class="btn-primary sm:w-auto mt-2" onclick="document.getElementById('csvFileInput').click()">
+                    Select File
+                </button>
+                <a href="#" id="loadDemoData" class="text-sm text-accent underline mt-2">Or load sample data</a>
+            </div>
+        </div>
+
+        <div id="dashboard-content" class="hidden space-y-8 mt-8">
+            
+            <div class="flex items-center justify-between pb-4 border-b border-border-light dark:border-border-dark">
+                <h3 class="font-bold text-lg text-primary dark:text-accent">Analysis Results</h3>
+                
+                <button id="btn-reset-analysis" class="flex items-center gap-2 text-sm font-medium text-red-500 hover:text-red-600 transition-colors">
+                    <span class="material-symbols-outlined text-lg">restart_alt</span>
+                    Reset / Upload New File
+                </button>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="content-card !p-6 flex items-center gap-4">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900/30 dark:text-blue-400">
+                        <span class="material-symbols-outlined">group</span>
+                    </div>
+                    <div>
+                        <p class="text-sm text-text-muted-light dark:text-text-muted-dark">Total Respondents</p>
+                        <h3 class="text-2xl font-black" id="stat-sample-size">--</h3>
+                    </div>
+                </div>
+                <div class="content-card !p-6 flex items-center gap-4">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600 dark:bg-green-900/30 dark:text-green-400">
+                        <span class="material-symbols-outlined">hub</span>
+                    </div>
+                    <div>
+                        <p class="text-sm text-text-muted-light dark:text-text-muted-dark">Correlation (Hours vs. Grade)</p>
+                        <h3 class="text-2xl font-black" id="stat-correlation">--</h3>
+                    </div>
+                </div>
+                <div class="content-card !p-6 flex items-center gap-4">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600 dark:bg-purple-900/30 dark:text-purple-400">
+                        <span class="material-symbols-outlined">trending_up</span>
+                    </div>
+                    <div>
+                        <p class="text-sm text-text-muted-light dark:text-text-muted-dark">Avg. Performance Change</p>
+                        <h3 class="text-2xl font-black" id="stat-change">--</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                
+                <div class="content-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="h3-section-title !border-none !pb-0 !m-0 !text-lg">Linear Regression: Lab Hours vs. Midterm</h3>
+                    </div>
+                    <div class="relative w-full h-[300px]">
+                        <canvas id="regressionChart"></canvas>
+                    </div>
+                    <p class="text-xs text-text-muted-light dark:text-text-muted-dark mt-4 italic" id="regression-insight">
+                        </p>
+                </div>
+
+                <div class="content-card">
+                    <h3 class="h3-section-title !border-none !pb-0 !m-0 !text-lg !mb-4">Grade Distribution (Prelim vs. Midterm)</h3>
+                    <div class="relative w-full h-[300px]">
+                        <canvas id="distributionChart"></canvas>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="content-card">
+                <h3 class="h3-section-title !border-none !pb-0 !m-0 !text-lg !mb-4">Multiple Correlation Matrix</h3>
+                <p class="text-sm text-text-muted-light dark:text-text-muted-dark mb-4">
+                    This heatmap visualizes how strongly each variable is related to the others. (1.0 = Perfect Correlation, 0.0 = No Relation).
+                </p>
+                <div class="overflow-x-auto">
+                    <div id="correlation-matrix-container" class="min-w-full"></div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div id="global-footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/dashboard-logic.js"></script>
+
+</body>
+</html>

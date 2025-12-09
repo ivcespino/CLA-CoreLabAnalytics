@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title> CLA | Participant Survey </title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    
+    <style>
+        .blur-content {
+            filter: blur(8px);
+            pointer-events: none;
+            user-select: none;
+        }
+    </style>
+</head>
+<body class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-display">
+
+    <div id="global-header"></div>
+
+    <div id="main-content-wrapper" class="transition-all duration-500 ease-in-out blur-content">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 py-10 min-h-screen">
+            
+            <div class="max-w-4xl mx-auto flex flex-col gap-2 mb-8">
+                <h1 class="h1-page-title">Participant Survey</h1>
+                <p class="text-text-muted-light dark:text-text-muted-dark academic-paragraph !mt-0">
+                    The Relationship Between Computer Laboratory Usage and Academic Performance
+                </p>
+            </div>
+
+            <div class="max-w-4xl mx-auto content-card !p-0 overflow-hidden min-h-[800px]">
+                <iframe 
+                    src="https://docs.google.com/forms/d/e/1FAIpQLScw_p_1234567890abcdefghijklmnopqrstuvwxyz/viewform?embedded=true" 
+                    width="100%" 
+                    height="1200" 
+                    frameborder="0" 
+                    marginheight="0" 
+                    marginwidth="0"
+                    class="w-full h-full min-h-[800px] bg-white">
+                    Loading…
+                </iframe>
+            </div>
+        </div>
+
+        <div id="global-footer"></div>
+    </div>
+
+    <div id="consent-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+        
+        <div class="bg-card-light dark:bg-card-dark rounded-xl shadow-2xl w-full max-w-2xl flex flex-col max-h-[90vh] animate-fade-in-up border border-border-light dark:border-border-dark">
+            
+            <div class="p-6 border-b border-border-light dark:border-border-dark flex items-start gap-4">
+                <div class="p-3 bg-primary/10 dark:bg-accent/10 rounded-full text-primary dark:text-accent">
+                    <span class="material-symbols-outlined text-2xl">verified_user</span>
+                </div>
+                <div>
+                    <h3 class="text-xl font-bold text-primary dark:text-text-dark">Informed Consent Required</h3>
+                    <p class="text-sm text-text-muted-light dark:text-text-muted-dark mt-1">
+                        Please review the terms before participating in this study.
+                    </p>
+                </div>
+            </div>
+
+            <div class="p-6 overflow-y-auto custom-scrollbar text-sm space-y-4 text-text-light dark:text-text-dark">
+                <p><strong>Title of Research:</strong> The Relationship Between Computer Laboratory Usage and Preliminary and Midterm Performance in Selected Core BSIT Subjects.</p>
+                
+                <p><strong>Purpose:</strong> This study aims to determine the significant relationship between laboratory usage frequency and academic performance.</p>
+                
+                <p><strong>Confidentiality:</strong> All information provided will be treated with strict confidentiality. Your name will not be linked to your responses in the final analysis. Data will be anonymized.</p>
+                
+                <p><strong>Voluntary Participation:</strong> Your participation is completely voluntary. You may withdraw at any time without penalty.</p>
+                
+                <p><strong>Risks and Benefits:</strong> There are no foreseeable risks. Your responses will help improve educational resources at STI College Malolos.</p>
+                
+                <div class="bg-primary-light/30 dark:bg-card-dark p-4 rounded-lg border border-primary/20 mt-4">
+                    <p class="font-bold text-primary dark:text-accent">By clicking "I Acknowledge and Proceed", you confirm that:</p>
+                    <ul class="list-disc list-inside mt-2 space-y-1 pl-2">
+                        <li>You are a BSIT student at STI College Malolos.</li>
+                        <li>You have read and understood the information above.</li>
+                        <li>You voluntarily agree to participate.</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="p-6 border-t border-border-light dark:border-border-dark flex justify-end gap-3 bg-bg-light dark:bg-bg-dark rounded-b-xl">
+                <a href="index.html" class="px-4 py-2 text-sm font-bold text-text-muted-light hover:text-red-500 transition-colors">
+                    Decline
+                </a>
+                <button id="btn-accept-consent" class="btn-primary sm:w-auto">
+                    I Acknowledge and Proceed
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            const $modal = $('#consent-modal');
+            const $wrapper = $('#main-content-wrapper');
+            const $btnAccept = $('#btn-accept-consent');
+
+            // Check if user already consented in this session
+            if (sessionStorage.getItem('consentGiven') === 'true') {
+                hideModal();
+            }
+
+            $btnAccept.on('click', function() {
+                // Save consent to session (clears when browser closes)
+                sessionStorage.setItem('consentGiven', 'true');
+                hideModal();
+            });
+
+            function hideModal() {
+                $modal.fadeOut(300);
+                
+                $wrapper.removeClass('blur-content');
+            }
+        });
+    </script>
+
+</body>
+</html>

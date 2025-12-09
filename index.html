@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title> CLA | Homepage </title>
+    
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link href="https://fonts.gstatic.com" crossorigin="" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+    <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body class="bg-bg-light dark:bg-bg-dark text-text-light dark:text-text-dark font-display">
+
+    <div id="global-header"></div>
+
+    <div class="relative w-full min-h-[90vh] parallax flex items-center justify-center py-20 lg:py-0" 
+         style="background-image: linear-gradient(rgba(16, 22, 34, 0.90), rgba(26, 35, 126, 0.85)), url('assets/images/background.jpg');">
+        
+        <div class="container mx-auto px-6 lg:px-8 grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            
+            <div class="text-text-dark animate-fade-in-up">
+                <span class="inline-block py-1 px-3 rounded-full bg-accent/20 border border-accent/50 text-accent text-xs font-bold mb-4">
+                    Practical Research II • A.Y. 2025-2026
+                </span>
+                <h1 class="text-3xl md:text-4xl lg:text-5xl font-black tracking-tight leading-tight text-text-dark mb-6">
+                    CoreLab Analytics: <br> Web-Based Research and Visualization Tool
+                </h1>
+                
+                <div class="flex flex-col sm:flex-row gap-4 mt-8">
+                    <a href="survey.html" class="btn-primary sm:w-auto hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined">assignment</span>
+                        Take Survey
+                    </a>
+                    <a href="dashboard.html" class="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-text-dark bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all sm:w-auto hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined">analytics</span>
+                        View Dashboard
+                    </a>
+                    <a href="assets/docs/Research_Paper.pdf" download class="flex items-center justify-center gap-2 px-6 py-3 rounded-lg font-bold text-text-dark bg-white/10 backdrop-blur-md hover:bg-white/20 transition-all sm:w-auto hover:scale-105 transition-transform">
+                        <span class="material-symbols-outlined">download</span>
+                        Full Paper (PDF)
+                    </a>
+                </div>
+            </div>
+
+            <div class="block bg-card-dark/40 backdrop-blur-md border border-white/10 p-6 md:p-8 rounded-2xl shadow-2xl">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="material-symbols-outlined text-accent text-3xl">smart_toy</span>
+                    <h3 class="text-xl font-bold text-white">About This Platform</h3>
+                </div>
+                <p class="text-gray-300 academic-paragraph !mt-0 text-sm">
+                    This web-based tool integrates <strong>Automated Statistical Analysis</strong> to convert raw research data into immediate visual insights. Unlike traditional papers, this platform offers a dynamic "Dashboard" that calculates regression trends and performance change scores in real-time.
+                </p>
+                
+                <div class="mt-6 pt-6 border-t border-white/10 grid grid-cols-2 gap-4">
+                    <div>
+                        <span class="block text-2xl font-bold text-accent">145</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Respondents (Slovin)</span>
+                    </div>
+                    <div>
+                        <span class="block text-2xl font-bold text-accent">501</span>
+                        <span class="text-xs text-gray-400 uppercase tracking-wider">Total Population</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce text-white/50 hidden md:block">
+            <span class="material-symbols-outlined text-3xl">keyboard_arrow_down</span>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-6 lg:px-8 py-16">
+        
+        <div class="mb-12 border-b border-border-light dark:border-border-dark pb-8">
+            <p class="text-xs font-bold text-accent uppercase tracking-widest mb-3">Official Research Title</p>
+            <h2 class="text-2xl md:text-3xl font-bold text-primary dark:text-text-dark leading-tight max-w-5xl">
+                The Relationship Between Computer Laboratory Usage and Preliminary and Midterm Performance in Selected Core BSIT Subjects at STI College Malolos with the Integration of a Web-Based Research and Visualization Tool
+            </h2>
+        </div>
+        <main class="homepage-layout">
+            
+            <div class="space-y-16">
+                
+                <section id="background" class="scroll-mt-32">
+                    <h3 class="h3-section-title">Background of the Study</h3>
+                    <p class="text-text-muted-light dark:text-text-muted-dark academic-paragraph">
+                        At STI College Malolos, computer laboratories are central to IT training, serving as the environment where lecture material translates into applied skills. Local work shows that strong ICT integration is tied to better student outcomes (Escubido et al., 2025), while international studies point to the way access to electronic facilities strengthens student competence (Sharif-Nia et al., 2024).
+                    </p>
+                    <p class="text-text-muted-light dark:text-text-muted-dark academic-paragraph">
+                        However, most research focuses on end-of-term results. What remains less examined is the <strong>longitudinal shift</strong>— specifically, how changes in laboratory usage frequency and intensity correspond to measurable performance change between the Preliminary and Midterm grading periods.
+                    </p>
+                </section>
+
+                <section id="problem" class="scroll-mt-32">
+                    <h3 class="h3-section-title">Statement of the Problem</h3>
+                    <div class="bg-primary-light/30 dark:bg-primary/20 p-6 rounded-lg border-l-4 border-primary dark:border-accent">
+                        <p class="font-bold text-primary dark:text-text-dark mb-2">Central Question:</p>
+                        <p class="italic text-text-light dark:text-text-dark">
+                            Does computer laboratory usage— measured through attended laboratory hours per week and the percentage of hands-on activity— correspond to changes in academic performance between the Preliminary and Midterm grading periods?
+                        </p>
+                    </div>
+                </section>
+
+                <section id="objectives" class="scroll-mt-32">
+                    <h3 class="h3-section-title">Research Objectives</h3>
+                    <ul class="list-disc list-inside space-y-2 mt-4 text-text-muted-light dark:text-text-muted-dark academic-paragraph">
+                        <li><strong>Measure Usage:</strong> Determine the frequency (hours/week) and intensity (hands-on %) of lab usage.</li>
+                        <li><strong>Analyze Correlation:</strong> Determine relationships between usage and Preliminary/Midterm grades.</li>
+                        <li><strong>Assess Impact:</strong> Assess if increased usage corresponds to a positive <em>Performance Change Score</em>.</li>
+                        <li><strong>Develop Tool:</strong> Create a web-based platform for visualization and dissemination.</li>
+                    </ul>
+                </section>
+
+                <section id="hypotheses" class="scroll-mt-32">
+                    <h3 class="h3-section-title">Hypotheses</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="content-card !p-4 border-accent/30 bg-accent/5">
+                            <strong class="text-accent block mb-2">Alternative (H₁)</strong>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                Higher laboratory usage is associated with a positive change in academic performance between grading periods.
+                            </p>
+                        </div>
+                        <div class="content-card !p-4 border-red-500/30 bg-red-500/5">
+                            <strong class="text-red-400 block mb-2">Null (H₀₁)</strong>
+                            <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                Laboratory usage is not associated with a significant change in academic performance.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="significance" class="scroll-mt-32">
+                    <h3 class="h3-section-title">Significance of the Study</h3>
+                    <p class="text-text-muted-light dark:text-text-muted-dark academic-paragraph">
+                        This study delivers empirical evidence to support pedagogical decisions regarding the optimal use of ICT resources.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+                        <div class="p-4 rounded border border-border-light dark:border-border-dark">
+                            <strong class="text-primary dark:text-text-dark">For Students</strong>
+                            <p class="text-xs mt-1 text-text-muted-light dark:text-text-muted-dark">Encourages intentional use of hands-on practice for skill development.</p>
+                        </div>
+                        <div class="p-4 rounded border border-border-light dark:border-border-dark">
+                            <strong class="text-primary dark:text-text-dark">For Institutions</strong>
+                            <p class="text-xs mt-1 text-text-muted-light dark:text-text-muted-dark">Guides decisions on capacity, maintenance, and allocation of equipment.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="methodology" class="scroll-mt-32">
+                    <h3 class="h3-section-title">Research Methodology</h3>
+                    <div class="space-y-4">
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 bg-primary/10 dark:bg-accent/10 rounded text-primary dark:text-accent">
+                                <span class="material-symbols-outlined">analytics</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text-light dark:text-text-dark">Research Design</h4>
+                                <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                    <strong>Quantitative Correlational Research Design.</strong> This method assesses the linear association between continuous numerical data (lab hours, hands-on time, grades) without manipulating variables.
+                                </p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 bg-primary/10 dark:bg-accent/10 rounded text-primary dark:text-accent">
+                                <span class="material-symbols-outlined">groups</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text-light dark:text-text-dark">Participants & Sampling</h4>
+                                <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                    <strong>Purposive Sampling.</strong> The study targets 145 respondents from a population of 501 BSIT students. Participants are selected based on the non-negotiable criteria of possessing paired academic records (Prelim & Midterm).
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4 items-start">
+                            <div class="p-2 bg-primary/10 dark:bg-accent/10 rounded text-primary dark:text-accent">
+                                <span class="material-symbols-outlined">model_training</span>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-text-light dark:text-text-dark">Data Analysis Plan</h4>
+                                <p class="text-sm text-text-muted-light dark:text-text-muted-dark">
+                                    The study utilizes <strong>Pearson r</strong> for correlation and <strong>Multiple Linear Regression</strong> to test predictive power. The "Performance Change Score" (Midterm - Prelim) serves as the primary dependent variable.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <aside class="toc-container sticky top-24 w-full lg:w-auto z-10">
+                <details class="group lg:open:block" open>
+                    <summary class="flex items-center justify-between font-bold text-primary dark:text-accent cursor-pointer lg:cursor-default lg:pointer-events-none list-none marker:hidden">
+                        <span>On This Page</span>
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180 lg:hidden">expand_more</span>
+                    </summary>
+                    
+                    <nav class="flex flex-col gap-2 text-sm mt-4 border-t border-border-light dark:border-border-dark pt-4 lg:border-none lg:pt-0" id="toc-nav">
+                        <a href="#background" class="toc-link group flex items-center gap-2 py-1 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-accent transition-colors"></span>
+                            Background
+                        </a>
+                        <a href="#problem" class="toc-link group flex items-center gap-2 py-1 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-accent transition-colors"></span>
+                            Problem Statement
+                        </a>
+                        <a href="#objectives" class="toc-link group flex items-center gap-2 py-1 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-accent transition-colors"></span>
+                            Objectives
+                        </a>
+                        <a href="#hypotheses" class="toc-link group flex items-center gap-2 py-1 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-accent transition-colors"></span>
+                            Hypotheses
+                        </a>
+                        <a href="#significance" class="toc-link group flex items-center gap-2 py-1 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-accent transition-colors"></span>
+                            Significance
+                        </a>
+                        <a href="#methodology" class="toc-link group flex items-center gap-2 py-1 text-text-muted-light dark:text-text-muted-dark hover:text-primary dark:hover:text-accent transition-colors">
+                            <span class="w-1.5 h-1.5 rounded-full bg-gray-300 group-hover:bg-accent transition-colors"></span>
+                            Methodology
+                        </a>
+                    </nav>
+                </details>
+            </aside>
+
+        </main>
+    </div>
+
+    <div id="global-footer"></div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script src="assets/js/config.js"></script>
+    <script src="assets/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            const $sections = $('section[id]');
+            const $navLinks = $('.toc-link');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px 0px -50% 0px',
+                threshold: 0
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        $navLinks.removeClass('text-primary dark:text-accent font-bold');
+                        $navLinks.find('span').removeClass('bg-primary dark:bg-accent scale-125');
+
+                        const id = entry.target.getAttribute('id');
+                        const $activeLink = $(`.toc-link[href="#${id}"]`);
+                        
+                        $activeLink.addClass('text-primary dark:text-accent font-bold');
+                        $activeLink.find('span').addClass('bg-primary dark:bg-accent scale-125');
+                    }
+                });
+            }, observerOptions);
+
+            $sections.each(function() {
+                observer.observe(this);
+            });
+
+            $navLinks.on('click', function(e) {
+                e.preventDefault();
+                const targetId = $(this).attr('href');
+                const $target = $(targetId);
+                $('html, body').animate({ scrollTop: $target.offset().top - 100 }, 600);
+            });
+
+            if ($(window).width() < 1024) {
+                 $('.toc-link').on('click', function() { $('aside details').removeAttr('open'); });
+            }
+            $(window).resize(function() {
+                if ($(window).width() >= 1024) { $('aside details').attr('open', true); }
+            });
+        });
+    </script>
+</body>
+</html>

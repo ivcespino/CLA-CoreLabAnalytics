@@ -1,0 +1,48 @@
+<header class="app-header flex-col !items-stretch">
+    
+    <div class="flex items-center justify-between w-full">
+        
+        <div class="flex items-center gap-3">
+            <div class="shrink-0">
+                <img src="assets/images/logo_light.png" 
+                     alt="CoreLab Analytics Logo" 
+                     class="h-7 w-auto rounded dark:hidden">
+                
+                <img src="assets/images/logo_dark.png" 
+                     alt="CoreLab Analytics Logo" 
+                     class="h-7 w-auto rounded hidden dark:block">
+            </div>
+
+            <h2 class="text-lg font-bold tracking-[-0.015em] text-text-light dark:text-text-dark truncate max-w-[200px] sm:max-w-none">
+                CoreLab Analytics
+            </h2>
+        </div>
+        
+        <div class="flex items-center gap-2 sm:gap-4">
+            
+            <nav class="hidden md:flex items-center gap-6" id="desktop-nav">
+                <a class="nav-link" href="index.html">Home</a>
+                <a class="nav-link" href="survey.html">Survey</a>
+                <a class="nav-link" href="dashboard.html">Dashboard</a>
+                <a class="nav-link" href="team.html">Team</a>
+            </nav>
+            
+            <button class="flex items-center justify-center p-2 rounded-lg transition-colors text-text-light-secondary hover:bg-gray-200 dark:text-text-dark-secondary dark:hover:bg-gray-700" id="theme-toggle">
+                <span class="material-symbols-outlined dark:hidden">light_mode</span>
+                <span class="material-symbols-outlined hidden dark:inline">dark_mode</span>
+            </button>
+
+            <button id="mobile-menu-btn" class="md:hidden flex items-center justify-center p-2 rounded-lg text-primary dark:text-accent hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden flex-col gap-2 pt-4 pb-2 mt-2 border-t border-border-light dark:border-border-dark md:hidden">
+        <a class="nav-link block p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" href="index.html">Home</a>
+        <a class="nav-link block p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" href="survey.html">Survey</a>
+        <a class="nav-link block p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" href="dashboard.html">Dashboard</a>
+        <a class="nav-link block p-3 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800" href="team.html">Team</a>
+    </div>
+
+</header>
