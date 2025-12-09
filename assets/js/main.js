@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
     // --- Global Favicon ---
-    $('head').append('<link rel="icon" type="image/png" href="assets/images/logo_light.png">');
+    $('head').append('<link rel="icon" type="image/png" href="assets/images/logo_dark.png">');
     
     // --- Component Loading ---
     // Load Header
@@ -65,3 +65,4 @@ $(document).ready(function() {
     }
 
 });
+
